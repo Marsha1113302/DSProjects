@@ -7,7 +7,7 @@ since I couldn't find many of the Chinese songs my parents used to blast in the 
 Luckily, KKBox has filled this void for my family and I. The Taiwan-based company features an impressive 45 million tracks to listen from and is 
 extremely popular in countries like Japan, Taiwan, Hong Kong, and Malaysia. My goal of this project is to build a model that can predict KKBox user 
 churn based off a user's transaction and listening history. I will also explore the top features associated with churn using a dataset from [Kaggle](https://www.kaggle.com/competitions/kkbox-churn-prediction-challenge/overview). 
-The [Jupyter Notebook] can also be found in this repo.
+The [Jupyter Notebook](https://github.com/Marsha1113302/Data_Science_Projects_Marshall_Lee/blob/main/KKBox_Churn_Prediction/KKBox%20Churn%20Prediction%20Project.ipynb) can also be found in this repo.
 
 ## Step 1: Clean and normalize data for analysis
 
