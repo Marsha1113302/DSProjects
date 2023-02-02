@@ -41,8 +41,10 @@ bar charts of every feature against user churn. A couple of interesting trends p
 ## Step 3: Preprocessing/Model building
 
 I will be using F1 and recall scores to judge model performance here. Accuracy would not be appropriate due the how skewed our dataset is. The three models I
-will test here are Random Forest, Logistic Regression, and Extreme Gradient Boost. The test scores for each model are:
+will test here are Random Forest, Logistic Regression, and Extreme Gradient Boost. After using Randomized Search to cross validate our models and prevent over-fitting, we get our optimal hyperparameters. The test scores for each model are:
 
 ![image](https://user-images.githubusercontent.com/115581803/215592230-6ee4ba2f-6300-40b8-9ff3-722ce584dd73.png)
 
-XGB wins by a slight margin, but going with Random Forest would be a very viable option as well. We will use Randomized Search cross validation to tune it and prevent overfitting.
+![image](https://user-images.githubusercontent.com/115581803/216421806-697fa18e-2560-4540-8764-c5e3eec6a286.png)
+
+XGB wins by a very slight margin, but going with Random Forest would be a viable option. I'm choosing XGB here since we are trying to minimize the number of False Negatives in our prediciton.
