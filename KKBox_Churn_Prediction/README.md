@@ -8,7 +8,7 @@ This folder contains the work for my first Capstone. THe goal of the project is 
 
 This repository contains:
 
-* _Notebook:_ KKBox_Churn_Prediction_project.ipynb
+* _Notebook:_ KKBox Churn Prediction project.ipynb
 * _Presentation:_ KKBox_Churn_prediction_slides.pdf
 * _Report_: KKBox_Churn_Prediction_finalreport.pdf
 
