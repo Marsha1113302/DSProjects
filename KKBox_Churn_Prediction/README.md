@@ -1,6 +1,6 @@
 # Predicting KKBox User Churn
 
-This folder contains the work for my first Capstone. THe goal of the project is to build a model that can predict user churn rate based of their transaction history, listening habits, and/or personal information. My approach comprises of three main steps:
+This folder contains the work for my first Capstone. The goal of the project is to build a model that can predict user churn rate based of their transaction history, listening habits, and/or personal information. My approach comprises of three main steps:
 
   1. Clean and normalize data for analysis
   2. Exploratory Data Analysis
