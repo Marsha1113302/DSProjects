@@ -10,7 +10,7 @@ This repository contains:
 
 * _Notebook:_ KKBox Churn Prediction project.ipynb
 * _Presentation:_ KKBox_Churn_prediction_slides.pdf
-* _Report_: KKBox_Churn_Prediction_finalreport(1).pdf
+* _Report_: KKBox_Churn_Prediction_finalreport.pdf
 
 Data Source:
 
