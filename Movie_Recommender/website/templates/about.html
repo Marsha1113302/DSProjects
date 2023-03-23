@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title> Movie Recommender About</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="/static/assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/static/css/styles.css" rel="stylesheet" />
+    </head>
+    <style>        body {
+        margin: 0;
+        font-family: var(--bs-body-font-family);
+        font-size: 0.9rem;
+        font-weight: var(--bs-body-font-weight);
+        line-height: var(--bs-body-line-height);
+        color: var(--bs-body-color);
+        text-align: left;
+        background-color: var(--bs-body-bg);
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        width: 100%;
+      }
+                .newimg {
+            text-align: center;
+            width: 50%;
+            border: none !important;
+        }
+        .newimg:hover {
+            border-color: initial !important;
+            box-shadow: none !important;
+        }
+            </style>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="about">About</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/Marsha1113302/Data_Science_Projects_Marshall_Lee">Github</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Content-->
+        <section>
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-6">
+                        <h3>Movie Recommender by Marshall Lee</h3>
+                            <p>This website was created as part of my capstone project for Springboard’s Data Science bootcamp. It uses the Movielens 20M dataset (Source: F. Maxwell Harper and Joseph A. Konstan. 2015. The MovieLens Datasets: History and Context. ACM Transactions on Interactive Intelligent Systems (TiiS) 5, 4, Article 19 (December 2015), 19 pages. DOI=http://dx.doi.org/10.1145/2827872). All movie posters and images were extracted from themoviedb using their API. This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+                            <br>
+                                <img class="newimg" src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg" alt="TMDB logo" width = "200" />
+                            <br>
+                            <br>
+                            <br>
+                            <h3>The algorithm</h3>
+                            <p>The recommender is a collaborative-filtering algorithm that uses Singular Value Decomposition to break down the millions of ratings (on a scale of 0.5-5) from real users into three matrices. First, we filter our original dataset for movies and users that have at least 50 ratings or more. All ratings from the original matrix are then scaled before filling in NaN values with zero. For new users, the website creates a new matrix, where the movies they choose get a rating of 5, and the movies they do not choose get the lowest rating of 0.5. We scale this new matrix, fill in the NaN values, and horizontally stack it with our original user-item matrix. Lastly, we set the number of latent factors equal to 50 before using scikit-learn’s svds function to generate our recommendations. 
+                            </p>
+                            <br>
+                            <h2>StandardScaler</h2>
+                            <p>Each user (column) in our user-item matrix is scaled to have mean of 0 and standard deviation of 1. This helps ensure that all users (i.e. a harsh user gives far lower ratings than the average user) are roughly on the same scale. I chose to use Standard Scaler for the recommender because I believed that it generated better recommendations than the other two methods.</p>
+                            <p>For example, below is the movie list generated after giving the recommender my three favorite movies of all time: The Count of Monte Cristo, the Lord of the Rings: Return of the King, and the Imitation Game.</p>
+                            <ol>
+                                <li>Lord of the Rings: The Fellowship of the Ring (2001)</li>
+                                <li>Lord of the Rings: The Two Towers, The (2002)</li>
+                                <li>Matrix, The (1999)	</li>
+                                <li>Pirates of the Caribbean: The Curse of the Black Pearl (2003)</li>
+                                <li>Gladiator (2000)</li>
+                                <li>Dark Knight, The (2008)	</li>
+                                <li>Shrek (2001)</li>
+                                <li>Finding Nemo (2003)</li>
+                                <li>Batman Begins (2005)</li>
+                                <li>Incredibles, The (2004)</li>
+                            </ol>
+                            <p>RMSE: 1.029, MSE: 1.059</p>
+                            <p>The movies generated are very popular and fall in line with my favorite genres, which are action and fantasy.</p>
+                            <br>
+                            <br>
+                            <h2>Division by # of ratings</h2>
+
+                                <p>To recommend items that are less popular, I tried “penalizing” the more popular movies by dividing each movie by the number of ratings it had. It generated these results based on the same three movies:</p>
+
+                                <ol>
+                                <li>Gentlemen of Fortune (Dzhentlmeny udachi) (1972)</li>
+                                <li>Here Comes the Boom (2012)</li>
+                                <li>Mouchette (1967)</li>
+                                <li>Great Buck Howard, The (2008)</li>
+                                <li>Swing Vote (2008)</li>
+                                <li>Relax... It's Just Sex (1998)</li>
+                                <li>American Me (1992)</li>
+                                <li>We Bought a Zoo (2011)</li>
+                                <li>Morvern Callar (2002)</li>
+                                <li>Bob le Flambeur (1955)</li>
+                                </ol>
+
+                                <p>RMSE: 0.012, MSE: 0.000</p>
+
+                                <p>Despite the lower Root-Mean-Squared-Error and ability to recommend lesser-known movies, this method did not recommend any that I found appealing.</p>
+
+                            <h2>Division by square root of the # of ratings</h2>
+
+                                <p>The same method as above, but dividing by the square root rather than just by the number of ratings.</p>
+
+                                <ol>
+                                <li>Gentlemen of Fortune (Dzhentlmeny udachi) (1972)</li>
+                                <li>24 Hour Party People (2002)</li>
+                                <li>Great Buck Howard, The (2008)</li>
+                                <li>My Favorite Wife (1940)</li>
+                                <li>Amarcord (1973)</li>
+                                <li>Songs From the Second Floor (Sånger från andra våningen) (2000)</li>
+                                <li>American Me (1992)</li>
+                                <li>Swing Vote (2008)</li>
+                                <li>Bob le Flambeur (1955)</li>
+                                <li>Dark Blue (2003)</li>
+                                </ol>
+
+                                <p>RMSE: 0.074, MSE: 0.005</p>
+
+                                <p>Not surprisingly, this movie set is very similar to the one generated using standardization method #2.</p>
+                                <p>This website was built using the Flask python library. For more information and the Jupyter notebook, Please visit the Github link.</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+                    </section>
+                    <!-- Bootstrap core JS-->
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+                    <!-- Core theme JS-->
+                    <script src="/static/js/scripts.js"></script>
+                    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+                </div>
+            </div>
+            </div>
+                </body>
+            </html>
+            
