@@ -4,8 +4,9 @@ This folder contains the work for my second Capstone. The goal of the project is
 
 This repository contains:
 
-* _Website:_ The website containing all Flask files for the application.
-* _Notebook:_ KKBox Churn Prediction project.ipynb
+* _Website:_ The website repository containing all Flask files for the application.
+* _Notebooks:_ Content_with_EDA.ipynb for the Content-based filter.
+  * asdf
 * _Presentation:_ KKBox_Churn_prediction_slides.pdf
 * _Report_: KKBox_Churn_Prediction_finalreport.pdf
 
