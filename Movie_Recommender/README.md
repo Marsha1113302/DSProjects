@@ -23,4 +23,5 @@ References:
 * Herrada, Oscar Celma. “The Recommendation Problem.” _Music Recommendation and Discovery in the Long Tail_, 2008, pp.37
 * Get recommendation function for content filter credited to Ibtesam Ahmed and her post on [Kaggle](https://www.kaggle.com/code/ibtesama/getting-started-with-a-movie-recommendation-system)
 * All movie posters and images were extracted from themoviedb using their API. This product uses the TMDB API but is not endorsed or certified by TMDB.
-(https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg)
+![The Movie DB Logo](https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1
+
