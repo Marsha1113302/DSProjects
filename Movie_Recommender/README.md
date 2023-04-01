@@ -1,6 +1,6 @@
 # Movie Recommender Website
 
-This folder contains the work for my second Capstone. The goal of the project is to build movie recommender website from scratch. 
+This folder contains the work for my second Capstone. The goal of the project is to build movie recommender website from scratch. IMPORTANT: The user-item matrix was too large to upload on github. It is referenced in website/recommendations.py (left_matrix and right_matrix).
 
 This repository contains:
 
